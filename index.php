@@ -6,7 +6,8 @@
     </head>
     <body>
         <?php
-            include 'Student.php';
+        echo "hello world";
+        include 'Student.php';
 
             $students = array();
 
@@ -31,9 +32,18 @@
             $second->add_grade(50);
             $students['a456'] = $second;
 
-            echo "hello world";
 
+            $third = new Student();
+            $third->surname = "Chau";
+            $third->first_name = "Dennis";
+            $third->add_email('home','dennis.chau@outlook.com');
+            $third->add_email('work1','dchau21@my.bcit.ca');
+            $third->add_grade(99);
+            $third->add_grade(99);
+            $third->add_grade(99);
+            $students['a837'] = $third;
 
+            ksort($students);
 
             foreach($students as $student)
                 echo $student->toString();
